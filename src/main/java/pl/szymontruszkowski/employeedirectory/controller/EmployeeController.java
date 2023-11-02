@@ -10,4 +10,9 @@ public class EmployeeController {
     public String main() {
         return "main";
     }
+
+    @GetMapping("/add-employee")
+    public String addEmployee() {
+        return "add-employee";
+    }
 }
