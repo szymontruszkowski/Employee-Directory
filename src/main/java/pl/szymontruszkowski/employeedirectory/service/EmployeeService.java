@@ -4,6 +4,9 @@ import pl.szymontruszkowski.employeedirectory.model.Employee;
 
 import java.util.List;
 
+/**
+ * Service layer interface.
+ */
 public interface EmployeeService {
 
     List<Employee> findAll();

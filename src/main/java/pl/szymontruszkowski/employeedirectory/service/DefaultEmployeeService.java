@@ -8,6 +8,10 @@ import pl.szymontruszkowski.employeedirectory.repository.EmployeeRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service class that provides logic for H2 Database operations
+ * with use of injected EmployeeRepository.
+ */
 @Service
 public class DefaultEmployeeService implements EmployeeService {
 
@@ -18,11 +22,20 @@ public class DefaultEmployeeService implements EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
+    /**
+     * Find all employees stored in the H2 Database.
+     * @return list of all employees
+     */
     @Override
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
 
+    /**
+     * Find an employee for the given id.
+     * @param theId     the id of employee
+     * @return          the employee
+     */
     @Override
     public Employee findById(int theId) {
 
@@ -39,11 +52,20 @@ public class DefaultEmployeeService implements EmployeeService {
         return theEmployee;
     }
 
+    /**
+     * Save a given employee in H2 Database.
+     * @param theEmployee   the given employee
+     * @return              the given employee
+     */
     @Override
     public Employee save(Employee theEmployee) {
         return employeeRepository.save(theEmployee);
     }
 
+    /**
+     * Delete an employee by the given id.
+     * @param theId     the given id
+     */
     @Override
     public void deleteById(int theId) {
         employeeRepository.deleteById(theId);
