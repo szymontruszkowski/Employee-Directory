@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+/**
+ * Entity class that will be handled in H2 Database.
+ */
 @Entity
 public class Employee {
 
