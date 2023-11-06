@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.szymontruszkowski.employeedirectory.model.Employee;
 import pl.szymontruszkowski.employeedirectory.service.EmployeeService;
 
@@ -35,8 +37,21 @@ public class EmployeeController {
         return "main-page";
     }
 
-    @GetMapping("/add-employee")
-    public String addEmployee() {
+    @GetMapping("/showAddEmployeeForm")
+    public String showAddEmployeeForm(Model theModel) {
+
+        Employee theEmployee = new Employee();
+
+        theModel.addAttribute("employee", theEmployee);
+
         return "add-employee";
+    }
+
+    @PostMapping("/processAddEmployeeForm")
+    public String processAddEmployeeForm(@ModelAttribute("employee") Employee theEmployee) {
+
+        employeeService.save(theEmployee);
+
+        return "redirect:/";
     }
 }
