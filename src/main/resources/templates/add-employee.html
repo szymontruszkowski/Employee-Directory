@@ -11,11 +11,11 @@
   <h3>Add Employee Form</h3>
 
   <form th:action="@{/processAddEmployeeForm}" th:object="${employee}" method="POST">
-    <input type="text" placeholder="First Name" th:text="*{firstName}"/>
+    <input type="text" placeholder="First Name" th:field="*{firstName}"/>
     <br><br>
-    <input type="text" placeholder="Last Name" th:text="*{lastName}"/>
+    <input type="text" placeholder="Last Name" th:field="*{lastName}"/>
     <br><br>
-    <input type="text" placeholder="Email" th:text="*{email}"/>
+    <input type="text" placeholder="Email" th:field="*{email}"/>
     <br><br>
     <button type="submit">Add</button>
   </form>
