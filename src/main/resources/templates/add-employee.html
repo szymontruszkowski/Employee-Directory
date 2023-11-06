@@ -11,6 +11,7 @@
   <h3>Add Employee Form</h3>
 
   <form th:action="@{/processAddEmployeeForm}" th:object="${employee}" method="POST">
+    <input type="hidden" th:field="*{id}"/>
     <input type="text" placeholder="First Name" th:field="*{firstName}"/>
     <br><br>
     <input type="text" placeholder="Last Name" th:field="*{lastName}"/>

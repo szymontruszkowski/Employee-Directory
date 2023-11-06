@@ -1,11 +1,13 @@
 package pl.szymontruszkowski.employeedirectory.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.szymontruszkowski.employeedirectory.model.Employee;
 import pl.szymontruszkowski.employeedirectory.service.EmployeeService;
 
@@ -62,5 +64,22 @@ public class EmployeeController {
         employeeService.save(theEmployee);
 
         return "redirect:/";
+    }
+
+    /**
+     * Mapping responsible for finding the employee with given id
+     * and showing pre-populated add employee form.
+     * @param theId         the given id of employee
+     * @param theModel      the model
+     * @return              add employee view
+     */
+    @GetMapping("/updateEmployee")
+    public String updateEmployee(@RequestParam("employeeId") int theId, Model theModel) {
+
+        Employee theEmployee = employeeService.findById(theId);
+
+        theModel.addAttribute("employee", theEmployee);
+
+        return "add-employee";
     }
 }
