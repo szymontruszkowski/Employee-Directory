@@ -8,6 +8,9 @@ import pl.szymontruszkowski.employeedirectory.repository.EmployeeRepository;
 
 import java.util.List;
 
+/**
+ * Configuration class responsible for loading initial data to the H2 Database.
+ */
 @Configuration
 public class DataLoader implements CommandLineRunner {
 
