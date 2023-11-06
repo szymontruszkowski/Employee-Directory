@@ -20,6 +20,11 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    /**
+     * Default mapping responsible for loading all employees and returning main page view.
+     * @param theModel  the model
+     * @return          main page view
+     */
     @GetMapping("/")
     public String main(Model theModel) {
 
@@ -27,7 +32,7 @@ public class EmployeeController {
 
         theModel.addAttribute("employees", theEmployees);
 
-        return "main";
+        return "main-page";
     }
 
     @GetMapping("/add-employee")
