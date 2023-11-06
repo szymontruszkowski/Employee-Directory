@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.szymontruszkowski.employeedirectory.model.Employee;
 import pl.szymontruszkowski.employeedirectory.service.EmployeeService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -37,6 +36,11 @@ public class EmployeeController {
         return "main-page";
     }
 
+    /**
+     * Mapping responsible for showing add employee form.
+     * @param theModel  the model
+     * @return          add employee view
+     */
     @GetMapping("/showAddEmployeeForm")
     public String showAddEmployeeForm(Model theModel) {
 
@@ -47,6 +51,11 @@ public class EmployeeController {
         return "add-employee";
     }
 
+    /**
+     * Mapping responsible for processing add employee form (saving a new employee).
+     * @param theEmployee   the employee object filled using form
+     * @return              main page view
+     */
     @PostMapping("/processAddEmployeeForm")
     public String processAddEmployeeForm(@ModelAttribute("employee") Employee theEmployee) {
 
