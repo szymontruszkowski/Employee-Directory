@@ -1,7 +1,6 @@
 package pl.szymontruszkowski.employeedirectory.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -81,5 +80,18 @@ public class EmployeeController {
         theModel.addAttribute("employee", theEmployee);
 
         return "add-employee";
+    }
+
+    /**
+     * Mapping responsible for deleting the employee with given id.
+     * @param theId     the given id of employee
+     * @return          main page view
+     */
+    @GetMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam("employeeId") int theId) {
+
+        employeeService.deleteById(theId);
+
+        return "redirect:/";
     }
 }
