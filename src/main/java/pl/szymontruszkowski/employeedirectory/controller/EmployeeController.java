@@ -23,7 +23,7 @@ public class EmployeeController {
     }
 
     /**
-     * Default mapping responsible for loading all employees and returning main page view.
+     * Default mapping responsible for loading all employees sorted by ID and returning main page view.
      * @param theModel  the model
      * @return          main page view
      */
@@ -31,6 +31,36 @@ public class EmployeeController {
     public String main(Model theModel) {
 
         List<Employee> theEmployees = employeeService.findAll();
+
+        theModel.addAttribute("employees", theEmployees);
+
+        return "main-page";
+    }
+
+    /**
+     * Mapping responsible for loading all employees sorted by first name and returning main page view.
+     * @param theModel  the model
+     * @return          main page view
+     */
+    @GetMapping("/sortByFirstName")
+    public String sortByFirstName(Model theModel) {
+
+        List<Employee> theEmployees = employeeService.findAllByFirstName();
+
+        theModel.addAttribute("employees", theEmployees);
+
+        return "main-page";
+    }
+
+    /**
+     * Mapping responsible for loading all employees sorted by last name and returning main page view.
+     * @param theModel  the model
+     * @return          main page view
+     */
+    @GetMapping("/sortByLastName")
+    public String sortByLastName(Model theModel) {
+
+        List<Employee> theEmployees = employeeService.findAllByLastName();
 
         theModel.addAttribute("employees", theEmployees);
 
@@ -66,9 +96,9 @@ public class EmployeeController {
     }
 
     /**
-     * Mapping responsible for finding the employee with given id
+     * Mapping responsible for finding the employee with given ID
      * and showing pre-populated add employee form.
-     * @param theId         the given id of employee
+     * @param theId         the given ID of employee
      * @param theModel      the model
      * @return              add employee view
      */
@@ -83,8 +113,8 @@ public class EmployeeController {
     }
 
     /**
-     * Mapping responsible for deleting the employee with given id.
-     * @param theId     the given id of employee
+     * Mapping responsible for deleting the employee with given ID.
+     * @param theId     the given ID of employee
      * @return          main page view
      */
     @GetMapping("/deleteEmployee")
