@@ -49,7 +49,7 @@ public class EmployeeController {
 
         theModel.addAttribute("employee", theEmployee);
 
-        return "add-employee";
+        return "employee-form";
     }
 
     /**
@@ -79,7 +79,7 @@ public class EmployeeController {
 
         theModel.addAttribute("employee", theEmployee);
 
-        return "add-employee";
+        return "employee-form";
     }
 
     /**
