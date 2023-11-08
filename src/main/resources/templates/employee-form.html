@@ -17,17 +17,17 @@
     <input type="hidden" th:field="*{id}"/>
 
     <div class="form-floating m-1">
-      <input class="form-control" type="text" placeholder="First Name" th:field="*{firstName}"/>
+      <input class="form-control" type="text" placeholder="First Name" th:field="*{firstName}" required/>
       <label>First Name</label>
     </div>
 
     <div class="form-floating m-1">
-      <input class="form-control" type="text" placeholder="Last Name" th:field="*{lastName}"/>
+      <input class="form-control" type="text" placeholder="Last Name" th:field="*{lastName}" required/>
       <label>Last Name</label>
     </div>
 
     <div class="form-floating m-1">
-      <input class="form-control" type="text" placeholder="Email" th:field="*{email}"/>
+      <input class="form-control" type="email" placeholder="Email" th:field="*{email}" required/>
       <label>Email</label>
     </div>
 
