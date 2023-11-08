@@ -11,6 +11,10 @@ public interface EmployeeService {
 
     List<Employee> findAll();
 
+    List<Employee> findAllByFirstName();
+
+    List<Employee> findAllByLastName();
+
     Employee findById(int theId);
 
     Employee save(Employee theEmployee);

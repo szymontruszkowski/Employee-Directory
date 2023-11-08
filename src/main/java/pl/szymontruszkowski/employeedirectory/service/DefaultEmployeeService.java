@@ -24,11 +24,29 @@ public class DefaultEmployeeService implements EmployeeService {
 
     /**
      * Find all employees stored in the H2 Database.
-     * @return list of all employees
+     * @return list of employees
      */
     @Override
     public List<Employee> findAll() {
         return employeeRepository.findAll();
+    }
+
+    /**
+     * Find all employees stored in H2 Database and sort them by first name ascending.
+     * @return  list of employees sorted by first name
+     */
+    @Override
+    public List<Employee> findAllByFirstName() {
+        return employeeRepository.findAllByOrderByFirstNameAsc();
+    }
+
+    /**
+     * Find all employees stored in H2 Database and sort them by last name ascending.
+     * @return  list of employees sorted by last name
+     */
+    @Override
+    public List<Employee> findAllByLastName() {
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     /**
