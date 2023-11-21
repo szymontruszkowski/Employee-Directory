@@ -27,6 +27,13 @@
                 </div>
             </div>
 
+            <!-- Check for logout -->
+            <div th:if="${param.logout}">
+                <div class="alert alert-success">
+                    You have been successfully signed out.
+                </div>
+            </div>
+
             <div class="form-floating m-2">
                 <input type="text" name="username" placeholder="Username" class="form-control" required/>
                 <label>Username</label>
