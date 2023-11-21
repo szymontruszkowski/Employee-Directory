@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <title>Main Page</title>
@@ -46,13 +47,13 @@
       </svg>
 
       <!-- Username -->
-      <span class="ms-2 fw-bold fs-5 align-middle">Lucas</span>
+      <span sec:authentication="principal.username" class="ms-2 fw-bold fs-5 align-middle"></span>
 
     </div>
 
     <!-- User roles -->
     <div class="mb-2">
-      Role(s): <span>EMPLOYEE, MANAGER, ADMIN</span>
+      Role(s): <span sec:authentication="principal.authorities"></span>
     </div>
 
     <!-- Logout button -->
