@@ -17,11 +17,12 @@
   <h2>Employee Directory</h2>
   <hr>
 
-
-  <a class="btn btn-success m-1" th:href="@{/showAddEmployeeForm}">
+  <!-- Add Employee button -->
+  <a class="btn btn-success mx-2" th:href="@{/showAddEmployeeForm}">
     Add Employee
   </a>
 
+  <!-- Sort by button-->
   <div class="d-inline">
     <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
       Sort by
@@ -31,6 +32,13 @@
       <a class="dropdown-item" th:href="@{/sortByFirstName}">First Name</a>
       <a class="dropdown-item" th:href="@{/sortByLastName}">Last Name</a>
     </div>
+  </div>
+
+  <!-- Logout button -->
+  <div class="float-end mx-2">
+    <form th:action="@{/logout}" method="POST">
+      <button class="btn btn-info" type="submit">Sign Out</button>
+    </form>
   </div>
 
   <br><br>
