@@ -20,6 +20,13 @@
 
         <form th:action="@{/authenticateTheUser}" method="POST">
 
+            <!-- Check for login error -->
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                    Invalid login credentials.
+                </div>
+            </div>
+
             <div class="form-floating m-2">
                 <input type="text" name="username" placeholder="Username" class="form-control" required/>
                 <label>Username</label>
