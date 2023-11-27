@@ -6,7 +6,7 @@ The app lets you to manage employee directory by adding new employees and updati
 The app uses embedded H2 database for saving employees.</br></br>
 Spring Security was implemented to enable login and restrict URLs based on user roles.</br>
 Check SecurityConfig class for login credentials.</br>
-3 example users with different roles were defined in SecurityConfig class:
-- EMPLOYEE: reviewing/sorting</br>
-- MANAGER: adding/updating</br>
-- ADMIN: deleting</br>
+3 example users with different roles were defined:
+- EMPLOYEE: reviewing/sorting
+- MANAGER: adding/updating
+- ADMIN: deleting
