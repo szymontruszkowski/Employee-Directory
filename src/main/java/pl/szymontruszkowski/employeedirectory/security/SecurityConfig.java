@@ -42,11 +42,15 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(configurer -> configurer
-//                        .requestMatchers("/**").hasRole("EMPLOYEE")
-//                        .requestMatchers("/showAddEmployeeForm").hasRole("MANAGER")
-//                        .requestMatchers("/processAddEmployeeForm").hasRole("MANAGER")
-//                        .requestMatchers("/updateEmployee").hasRole("MANAGER")
-//                        .requestMatchers("/deleteEmployee").hasRole("ADMIN")
+                        .requestMatchers(new AntPathRequestMatcher("/")).hasRole("EMPLOYEE")
+                        .requestMatchers(new AntPathRequestMatcher("/sortByFirstName")).hasRole("EMPLOYEE")
+                        .requestMatchers(new AntPathRequestMatcher("/sortByLastName")).hasRole("EMPLOYEE")
+
+                        .requestMatchers(new AntPathRequestMatcher("/showAddEmployeeForm")).hasRole("MANAGER")
+                        .requestMatchers(new AntPathRequestMatcher("/processAddEmployeeForm")).hasRole("MANAGER")
+                        .requestMatchers(new AntPathRequestMatcher("/updateEmployee")).hasRole("MANAGER")
+
+                        .requestMatchers(new AntPathRequestMatcher("/deleteEmployee")).hasRole("ADMIN")
                         .anyRequest().authenticated())
 
                         .formLogin(form -> form
