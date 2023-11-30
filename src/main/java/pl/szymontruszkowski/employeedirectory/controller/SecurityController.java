@@ -16,6 +16,10 @@ public class SecurityController {
         return "login-page";
     }
 
+    /**
+     * Mapping responsible for showing access denied page view.
+     * @return      access denied page view
+     */
     @GetMapping("/access-denied-page")
     public String showAccessDenied() {
 
