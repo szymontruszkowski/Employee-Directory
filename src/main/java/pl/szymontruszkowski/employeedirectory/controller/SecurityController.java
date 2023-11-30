@@ -15,4 +15,10 @@ public class SecurityController {
 
         return "login-page";
     }
+
+    @GetMapping("/access-denied-page")
+    public String showAccessDenied() {
+
+        return "access-denied-page";
+    }
 }
