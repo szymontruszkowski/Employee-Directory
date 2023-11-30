@@ -53,7 +53,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
 
                         .formLogin(form -> form
-                            .loginPage("/showLoginPage")
+                            .loginPage("/login-page")
                             .loginProcessingUrl("/authenticateTheUser")
                             .permitAll())
 
