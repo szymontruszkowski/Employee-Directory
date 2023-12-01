@@ -11,9 +11,15 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+/**
+ * Configuration class responsible for Spring Security config.
+ */
 @Configuration
 public class SecurityConfig {
 
+    /**
+     * Define login credentials and roles for different users.
+     */
     @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
 
@@ -38,6 +44,9 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(lucas, william, emma);
     }
 
+    /**
+     * Restrict URLs based on roles, define custom login/access denied page.
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -66,6 +75,9 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Enable access to H2 Console regardless of the logged-in user.
+     */
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
