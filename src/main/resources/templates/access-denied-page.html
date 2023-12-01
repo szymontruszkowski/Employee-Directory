@@ -9,9 +9,12 @@
 </head>
 <body>
 
-<div>
-  Access denied: unauthorized entry detected. <br>
-  Use this link to <a th:href="@{/}">get back to Main Page</a>.
+<div class="d-flex justify-content-center p-0 alert alert-warning" style="width: 520px; height: 100px;">
+    <div class="my-auto">
+        Access Denied - unauthorized entry has been detected. <br>
+        Probably you don't have necessary permissions to access this page. <br>
+        Use this link to get <a th:href="@{/}">back to Main Page</a>.
+    </div>
 </div>
 
 </body>
