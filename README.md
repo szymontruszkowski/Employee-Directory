@@ -10,7 +10,7 @@ The app uses embedded **H2 database** for saving employees. <br>
 
 Few predefined **Employee** entities are loaded into database on startup in **DataLoader** class. <br>
 
-## Technologies used
+## Technologies used in the project
 
 - Java
 - MVC
@@ -38,7 +38,7 @@ Three example **users** with different **role(s)** have been definied. <br>
 
 App functionalities are restricted based on user role(s).
 
-| Role(s) | Action(s) |
+| Role | Action(s) |
 |--|--|
 | EMPLOYEE | reviewing, sorting |
 | MANAGER | adding, updating |
@@ -58,4 +58,4 @@ To run the app:
 - open it in IDE
 - run **main()** method in **EmployeeDirectoryApplication** class
 - in your web browser go to **localhost:8080**
-- use login credentials mentioned in **Spring Security** section
+- use login credentials described in **Spring Security** section
