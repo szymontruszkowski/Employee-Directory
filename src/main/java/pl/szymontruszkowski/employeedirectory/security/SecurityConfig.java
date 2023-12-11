@@ -25,19 +25,19 @@ public class SecurityConfig {
 
         UserDetails lucas = User.builder()
                 .username("lucas")
-                .password("{noop}lucas123")
+                .password("{bcrypt}$2a$10$9UyDHNHPTewyRV1QBzrpvOcNMGPw2aNT6ZaWW/0iMQyP/7Bubeb3i")
                 .roles("EMPLOYEE")
                 .build();
 
         UserDetails william = User.builder()
                 .username("william")
-                .password("{noop}william123")
+                .password("{bcrypt}$2a$10$iYLOmxRGudICyL35TucY3uSoIbjKYUjiNRPKllgTjRY08/ShYyDkm")
                 .roles("EMPLOYEE", "MANAGER")
                 .build();
 
         UserDetails emma = User.builder()
                 .username("emma")
-                .password("{noop}emma123")
+                .password("{bcrypt}$2a$10$X3HF3xTo7L6Wdc6hBGfkhO4cFhoaqNZx3Y6xNxWwyHje/2IHSrU62")
                 .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
